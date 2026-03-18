@@ -420,3 +420,112 @@ RESPONSIVE
     .hero h1 { font-size: 42px; }
     .slider { height: 260px; }
 }
+Voici le nouveau templates/pages/admin/users.php avec le CSS sorti dans assets/css/style.css et un design amélioré :
+D'abord ajoute ces classes à la fin de assets/css/style.css :
+bashcat >> assets/css/style.css << 'EOF'
+
+/* ===============================
+ADMIN USERS
+================================ */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #aab6ff;
+    border-bottom: 1px solid #27325b;
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #1a2340;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tr:hover td {
+    background: #0d1526;
+}
+
+.badge-role {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.badge-role.admin {
+    background: #312e81;
+    color: #a5b4fc;
+}
+
+.badge-role.user {
+    background: #1a2340;
+    color: #aab6ff;
+}
+
+.badge-you {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #14532d;
+    color: #86efac;
+}
+
+.btn-danger {
+    background: #7f1d1d;
+    color: #fca5a5;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background: #991b1b;
+}
+
+.admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.admin-page-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.admin-page-header p {
+    margin: 4px 0 0;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.admin-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #5563ff;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
