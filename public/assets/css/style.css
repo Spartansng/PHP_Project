@@ -1,0 +1,548 @@
+/* ===============================
+GLOBAL
+================================ */
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    background: #050b1a;
+    color: #f5f7ff;
+}
+
+a {
+    text-decoration: none;
+    color: #aab6ff;
+}
+
+a:hover {
+    color: white;
+}
+
+.container {
+    max-width: 1600px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===============================
+NAVBAR
+================================ */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: #121a33;
+    border-bottom: 1px solid #27325b;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav a {
+    margin-left: 20px;
+}
+
+/* ===============================
+HERO
+================================ */
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+HERO SLIDER
+================================ */
+
+.slider-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #121a33;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slider-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    opacity: 0.85;
+}
+
+/* ===============================
+SECTION TITLE
+================================ */
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #5563ff;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* ===============================
+CATALOG
+================================ */
+
+.catalog {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===============================
+CARD
+================================ */
+
+.card {
+    background: #121a33;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid #27325b;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(85,99,255,0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.card h3 {
+    margin: 6px 0;
+    font-size: 17px;
+}
+
+.card p {
+    margin: 4px 0;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* ===============================
+LEVEL BADGE
+================================ */
+
+.level {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.level1 { background: #22c55e; }
+.level2 { background: #f97316; }
+.level3 { background: #ef4444; }
+
+/* ===============================
+BUTTON
+================================ */
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #5563ff;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:hover {
+    background: #6a78ff;
+}
+
+/* ===============================
+ACTIONS
+================================ */
+
+.actions {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ===============================
+GAME DETAIL
+================================ */
+
+.game-detail {
+    background: #121a33;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #27325b;
+    max-width: 900px;
+    margin: auto;
+}
+
+.game-detail img {
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: contain;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.game-info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===============================
+ACHIEVEMENTS
+================================ */
+
+.achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.achievement {
+    background: #121a33;
+    border: 1px solid #27325b;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* ===============================
+PAGINATION
+================================ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.pagination a {
+    padding: 8px 14px;
+    background: #121a33;
+    border: 1px solid #27325b;
+    border-radius: 6px;
+    color: white;
+    transition: 0.2s;
+}
+
+.pagination a:hover { background: #5563ff; }
+.pagination a.active {
+    background: #5563ff;
+    font-weight: 700;
+}
+
+/* ===============================
+FOOTER
+================================ */
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0.6;
+}
+
+/* ===============================
+AUTH
+================================ */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.auth-card {
+    background: #111827;
+    padding: 40px;
+    border-radius: 16px;
+    width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background: #1f2937;
+    color: white;
+    font-size: 14px;
+}
+
+.auth-form input::placeholder { color: #9ca3af; }
+
+.auth-form input:focus {
+    outline: none;
+    background: #27325b;
+}
+
+.auth-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #6366f1;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-form button:hover {
+    background: #4f46e5;
+    transform: scale(1.03);
+}
+
+.auth-link {
+    text-align: center;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.auth-link a { color: #818cf8; }
+.auth-link a:hover { text-decoration: underline; }
+
+/* ===============================
+ACHIEVEMENT POPUP
+================================ */
+
+#achievement-popup {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    background: #22c55e;
+    color: white;
+    padding: 18px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    z-index: 1000;
+    animation: popupSlide 0.4s ease;
+    transition: opacity 0.6s ease;
+}
+
+@keyframes popupSlide {
+    from { transform: translateY(-20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media(max-width: 768px) {
+    .topbar { flex-direction: column; gap: 10px; }
+    .grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 42px; }
+    .slider { height: 260px; }
+}
+
+/* ===============================
+ADMIN
+================================ */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #aab6ff;
+    border-bottom: 1px solid #27325b;
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #1a2340;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tr:hover td {
+    background: #0d1526;
+}
+
+.badge-role {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.badge-role.admin {
+    background: #312e81;
+    color: #a5b4fc;
+}
+
+.badge-role.user {
+    background: #1a2340;
+    color: #aab6ff;
+}
+
+.badge-you {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #14532d;
+    color: #86efac;
+}
+
+.btn-danger {
+    background: #7f1d1d;
+    color: #fca5a5;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background: #991b1b;
+}
+
+.admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.admin-page-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.admin-page-header p {
+    margin: 4px 0 0;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.admin-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #5563ff;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-box {
+    background: #121a33;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #27325b;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 40px;
+    font-weight: 700;
+    color: #5563ff;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 4px;
+}

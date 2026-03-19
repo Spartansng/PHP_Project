@@ -17,11 +17,11 @@
 </div>
 
 <div class="grid">
-    <a href="/public/admin/users.php" class="card">
+    <a href="/admin/users.php" class="card">
         <h3>Gerer les utilisateurs</h3>
         <p>Roles, suppressions, liste complete</p>
     </a>
-    <a href="/public/admin/games.php" class="card">
+    <a href="/admin/games.php" class="card">
         <h3>Gerer les jeux</h3>
         <p>Ajout, edition, suppression de jeux</p>
     </a>

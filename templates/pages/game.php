@@ -18,7 +18,7 @@
     </div>
 
     <div class="actions">
-        <a href="/public/games.php">
+        <a href="/games.php">
             <button>Retour au catalogue</button>
         </a>
 

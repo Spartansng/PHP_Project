@@ -1,18 +1,19 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/auth.php';
-require_login();
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../includes/auth.php';require_login();
 
 if (!is_post()) {
-    redirect('/public/profile.php');
+    redirect('/profile.php');
 }
 
 $gameId = (int)($_POST['game_id'] ?? 0);
 
 if ($gameId <= 0) {
     flash_set('err', 'Jeu invalide.');
-    redirect('/public/profile.php');
+    redirect('/profile.php');
 }
 
 $pdo->prepare("
@@ -21,4 +22,4 @@ $pdo->prepare("
 ")->execute([(int)$u['id'], $gameId]);
 
 flash_set('ok', 'Jeu retire de votre collection.');
-redirect('/public/profile.php');
+redirect('/profile.php');

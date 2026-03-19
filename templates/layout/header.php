@@ -18,20 +18,20 @@ $u = current_user($pdo);
 <body>
 <header class="topbar">
     <div class="brand">
-        <a href="/public/index.php">Arcade Universe</a>
+        <a href="/index.php">Arcade Universe</a>
     </div>
     <nav class="nav">
-        <a href="/public/index.php">Accueil</a>
-        <a href="/public/games.php">Jeux</a>
+        <a href="/index.php">Accueil</a>
+        <a href="/games.php">Jeux</a>
         <?php if ($u): ?>
-            <a href="/public/profile.php">Profil</a>
+            <a href="/profile.php">Profil</a>
             <?php if ($u['role'] === 'admin'): ?>
-                <a href="/public/admin/index.php">Admin</a>
+                <a href="/admin/index.php">Admin</a>
             <?php endif; ?>
-            <a href="/public/logout.php">Déconnexion</a>
+            <a href="/logout.php">Déconnexion</a>
         <?php else: ?>
-            <a href="/public/login.php">Connexion</a>
-            <a href="/public/register.php">Inscription</a>
+            <a href="/login.php">Connexion</a>
+            <a href="/register.php">Inscription</a>
         <?php endif; ?>
     </nav>
 </header>

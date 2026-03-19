@@ -23,7 +23,7 @@
                 <img src="<?= e($game['image_url']) ?>" alt="<?= e($game['title']) ?>">
                 <h3><?= e($game['title']) ?></h3>
                 <p><?= e($game['genre'] ?? '') ?></p>
-                <a href="/public/game.php?id=<?= e($game['id']) ?>">
+                <a href="/game.php?id=<?= e($game['id']) ?>">
                     <button>Voir le jeu</button>
                 </a>
             </div>

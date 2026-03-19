@@ -21,10 +21,10 @@
                 <h3><?= e($game['title']) ?></h3>
                 <p><?= e($game['genre'] ?? '') ?></p>
                 <div class="actions">
-                    <a href="/public/game.php?id=<?= e($game['id']) ?>">
+                    <a href="/game.php?id=<?= e($game['id']) ?>">
                         <button>Voir le jeu</button>
                     </a>
-                    <form method="POST" action="/public/remove_game.php">
+                    <form method="POST" action="/remove_game.php">
                         <input type="hidden" name="game_id" value="<?= e($game['id']) ?>">
                         <button class="btn-danger">Retirer de ma collection</button>
                     </form>

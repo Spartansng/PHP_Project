@@ -9,7 +9,7 @@ if (isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
     $pdo->prepare("DELETE FROM games WHERE id = ?")->execute([$id]);
     flash_set('ok', "Jeu supprime.");
-    redirect('/public/admin/games.php');
+    redirect('/admin/games.php');
 }
 
 $stmt = $pdo->query("SELECT * FROM games ORDER BY id DESC");

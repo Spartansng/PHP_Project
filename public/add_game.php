@@ -1,24 +1,26 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/../templates/layout/header.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../includes/auth.php';
 require_login();
 
 if (!is_post()) {
-    redirect('/public/games.php');
+    redirect('/games.php');
 }
 
 $gameId = (int)($_POST['game_id'] ?? 0);
 $userId = (int)$u['id'];
 
 if ($gameId <= 0) {
-    redirect('/public/games.php');
+    redirect('/games.php');
 }
 
 $stmt = $pdo->prepare("SELECT id FROM user_games WHERE user_id = ? AND game_id = ?");
 $stmt->execute([$userId, $gameId]);
 if ($stmt->fetch()) {
-    redirect('/public/profile.php');
+    redirect('/profile.php');
 }
 
 $stmt = $pdo->prepare("SELECT * FROM games WHERE id = ?");
@@ -26,7 +28,7 @@ $stmt->execute([$gameId]);
 $game = $stmt->fetch();
 
 if (!$game) {
-    redirect('/public/games.php');
+    redirect('/games.php');
 }
 
 $stmt = $pdo->prepare("
@@ -65,4 +67,4 @@ foreach ($newAchievements as $achievementId) {
     }
 }
 
-redirect('/public/profile.php');
+redirect('/profile.php');

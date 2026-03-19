@@ -1,6 +1,6 @@
 <h1>Catalogue de jeux</h1>
 
-<form method="GET" action="/public/games.php" class="filters">
+<form method="GET" action="/games.php" class="filters">
     <input
         type="text"
         name="search"
@@ -37,15 +37,14 @@
                 <?= ['1' => 'Easy', '2' => 'Medium', '3' => 'Hard'][$level] ?? 'Easy' ?>
             </span>
             <p><?= e($game['description'] ?? '') ?></p>
-            <span class="badge">Note : <?= e($game['rating'] ?? 0) ?>/10</span>
 
             <div class="actions">
-                <a href="/public/game.php?id=<?= e($game['id']) ?>">
+                <a href="/game.php?id=<?= e($game['id']) ?>">
                     <button>Voir le jeu</button>
                 </a>
 
                 <?php if ($u && !in_array($game['id'], $ownedGameIds)): ?>
-                    <form method="POST" action="/public/add_game.php">
+                    <form method="POST" action="/add_game.php">
                         <input type="hidden" name="game_id" value="<?= e($game['id']) ?>">
                         <button type="submit">Ajouter à ma collection</button>
                     </form>
