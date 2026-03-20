@@ -627,3 +627,54 @@ PLAYTIME
 .btn-cancel:hover {
     background: #27325b;
 }
+/* ===============================
+ADMIN FORM
+================================ */
+
+.admin-form-card {
+    margin-bottom: 40px;
+}
+
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.admin-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.admin-form-field label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #aab6ff;
+    font-weight: 600;
+}
+
+.admin-form-field input,
+.admin-form-field textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #27325b;
+    background: #0d1526;
+    color: white;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.admin-form-field input:focus,
+.admin-form-field textarea:focus {
+    outline: none;
+    border-color: #5563ff;
+    background: #121a33;
+}
+
+.admin-form-field textarea {
+    resize: vertical;
+    min-height: 80px;
+}
