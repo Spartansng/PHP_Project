@@ -5,7 +5,8 @@ GLOBAL
 body {
     margin: 0;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    background: #050b1a;
+    background: #050b1a url('/assets/images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #f5f7ff;
 }
 
