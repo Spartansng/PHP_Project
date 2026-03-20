@@ -12,7 +12,6 @@
     <p><?= e($game['description'] ?? '') ?></p>
 
     <div class="game-info">
-        <p>Note : <?= e($game['rating'] ?? 0) ?>/10</p>
         <p>Sortie : <?= e($game['release_date'] ?? '') ?></p>
         <p>Ajouté le : <?= e($game['created_at']) ?></p>
     </div>
@@ -23,7 +22,7 @@
         </a>
 
         <?php if ($u && !$alreadyOwned): ?>
-            <form method="POST" action="/public/add_game.php">
+            <form method="POST" action="/add_game.php">
                 <input type="hidden" name="game_id" value="<?= e($game['id']) ?>">
                 <button type="submit">Ajouter à ma collection</button>
             </form>

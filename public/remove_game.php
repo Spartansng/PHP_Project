@@ -3,7 +3,10 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/functions.php';
-require_once __DIR__ . '/../includes/auth.php';require_login();
+require_once __DIR__ . '/../includes/auth.php';
+
+$u = current_user($pdo);
+require_login();
 
 if (!is_post()) {
     redirect('/profile.php');
