@@ -11,7 +11,11 @@ if (is_post()) {
     $email    = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    if (strlen($password) < 8) {
+    if (empty($username)) {
+        $error = "Le nom d'utilisateur est obligatoire.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "L'adresse email n'est pas valide.";
+    } elseif (strlen($password) < 8) {
         $error = "Le mot de passe doit contenir au moins 8 caractères.";
     } else {
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);

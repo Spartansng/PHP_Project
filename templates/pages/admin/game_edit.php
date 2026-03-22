@@ -1,5 +1,9 @@
 <h1><?= $game ? 'Modifier un jeu' : 'Ajouter un jeu' ?></h1>
 
+<?php if (!empty($error)): ?>
+    <p style="color: red"><?= e($error) ?></p>
+<?php endif; ?>
+
 <div class="card">
     <form method="POST">
         <input type="hidden" name="id" value="<?= (int)($game['id'] ?? 0) ?>">
