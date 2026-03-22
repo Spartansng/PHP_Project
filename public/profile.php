@@ -6,7 +6,7 @@ require_once __DIR__ . '/../templates/layout/header.php';
 require_login();
 
 $stmt = $pdo->prepare("
-    SELECT g.*
+    SELECT g.*, ug.play_time_minutes
     FROM user_games ug
     JOIN games g ON g.id = ug.game_id
     WHERE ug.user_id = ?
