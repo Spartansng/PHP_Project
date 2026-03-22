@@ -5,15 +5,15 @@ $title = "Admin - Utilisateurs";
 require_once __DIR__ . '/../../templates/layout/header.php';
 require_admin($pdo);
 
-if (isset($_GET['delete'])) {
-    $id = (int)$_GET['delete'];
-    if ($id === (int)$u['id']) {
+if (is_post() && isset($_POST['delete'])) {
+    $id = (int)($_POST['delete'] ?? 0);
+    if ($id > 0 && $id !== (int)$u['id']) {
+        $pdo->prepare("DELETE FROM users WHERE id = ?")->execute([$id]);
+        flash_set('ok', "Utilisateur supprimé.");
+    } else {
         flash_set('err', "Vous ne pouvez pas supprimer votre propre compte.");
-        redirect('/admin/users.php');
     }
-    $pdo->prepare("DELETE FROM users WHERE id = ?")->execute([$id]);
-    flash_set('ok', "Utilisateur supprime.");
-    redirect('/admin/users.php');
+    redirect('/public/admin/users.php');
 }
 
 $stmt  = $pdo->query("SELECT * FROM users ORDER BY created_at DESC");

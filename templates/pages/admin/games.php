@@ -61,7 +61,7 @@
                             </a>
                             <form method="POST" action="/admin/games.php"
                                 onsubmit="return confirm('Supprimer ce jeu ?')">
-                                <input type="hidden" name="delete" valu e="<?= (int)$g['id'] ?>">
+                                <input type="hidden" name="delete" value="<?= (int)$g['id'] ?>">
                                 <button type="submit" class="btn-danger">Supprimer</button>
                             </form>
                         </div>

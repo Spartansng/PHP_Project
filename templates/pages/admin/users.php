@@ -35,10 +35,11 @@
                     <td><?= date('d/m/Y', strtotime($user['created_at'])) ?></td>
                     <td>
                         <?php if ($user['id'] != $u['id']): ?>
-                            <a href="?delete=<?= (int)$user['id'] ?>"
-                               onclick="return confirm('Supprimer <?= e($user['username']) ?> ?')">
-                                <button class="btn-danger">Supprimer</button>
-                            </a>
+                        <form method="POST" action="/public/admin/users.php"
+                              onsubmit="return confirm('Supprimer <?= e($user['username']) ?> ?')">
+                            <input type="hidden" name="delete" value="<?= (int)$user['id'] ?>">
+                            <button type="submit" class="btn-danger">Supprimer</button>
+                        </form>
                         <?php else: ?>
                             <span class="badge-you">Vous</span>
                         <?php endif; ?>
