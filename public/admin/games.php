@@ -5,11 +5,13 @@ $title = "Admin - Jeux";
 require_once __DIR__ . '/../../templates/layout/header.php';
 require_admin($pdo);
 
-if (isset($_GET['delete'])) {
-    $id = (int)$_GET['delete'];
-    $pdo->prepare("DELETE FROM games WHERE id = ?")->execute([$id]);
-    flash_set('ok', "Jeu supprime.");
-    redirect('/admin/games.php');
+if (is_post() && isset($_POST['delete'])) {
+    $id = (int)($_POST['delete'] ?? 0);
+    if ($id > 0) {
+        $pdo->prepare("DELETE FROM games WHERE id = ?")->execute([$id]);
+        flash_set('ok', "Jeu supprimé.");
+    }
+    redirect('/public/admin/games.php');
 }
 
 $stmt = $pdo->query("SELECT * FROM games ORDER BY id DESC");

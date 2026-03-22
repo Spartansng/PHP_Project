@@ -59,10 +59,11 @@
                             <a href="/admin/game_edit.php?id=<?= (int)$g['id'] ?>">
                                 <button>Modifier</button>
                             </a>
-                            <a href="/admin/games.php?delete=<?= (int)$g['id'] ?>"
-                               onclick="return confirm('Supprimer ce jeu ?')">
-                                <button class="btn-danger">Supprimer</button>
-                            </a>
+                            <form method="POST" action="/admin/games.php"
+                                onsubmit="return confirm('Supprimer ce jeu ?')">
+                                <input type="hidden" name="delete" valu e="<?= (int)$g['id'] ?>">
+                                <button type="submit" class="btn-danger">Supprimer</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
