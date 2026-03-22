@@ -2,7 +2,12 @@
 
 $db = new PDO("sqlite:" . __DIR__ . "/database.sqlite");
 
-$apiKey = "3f5291e355c7452584a18f08e8dd3894";
+$env = parse_ini_file(__DIR__ . '/.env');
+$apiKey = $env['RAWG_API_KEY'] ?? '';
+
+if (empty($apiKey)) {
+    die("Erreur : clé API manquante dans le fichier .env\n");
+}
 
 for ($page = 1; $page <= 5; $page++) {
 
@@ -47,4 +52,4 @@ for ($page = 1; $page <= 5; $page++) {
     }
 }
 
-echo "\nImport termine\n";
+echo "\nImport terminé\n";
