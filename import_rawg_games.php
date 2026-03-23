@@ -27,6 +27,7 @@ for ($page = 1; $page <= 5; $page++) {
         $date        = $game['released']         ?? '';
         $genre       = 'Unknown';
         $description = $game['slug']             ?? 'Jeu populaire RAWG';
+        $difficulty  = rand(1, 3);
 
         if (!empty($game['genres'])) {
             $genre = $game['genres'][0]['name'];
@@ -34,9 +35,9 @@ for ($page = 1; $page <= 5; $page++) {
 
         $stmt = $db->prepare("
             INSERT INTO games
-                (title, description, genre, rating, image_url, release_date)
+                (title, description, genre, rating, image_url, release_date, difficulty)
             VALUES
-                (?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?)
         ");
 
         $stmt->execute([
@@ -45,7 +46,8 @@ for ($page = 1; $page <= 5; $page++) {
             $genre,
             $rating,
             $image,
-            $date
+            $date,
+            $difficulty
         ]);
 
         echo "Ajout : $title\n";
